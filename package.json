@@ -1,10 +1,10 @@
 {
-  "name": "@mittnavnermike/hey-ui",
+  "name": "heydays-ui",
   "version": "1.0.0",
   "description": "Heydays component library",
   "author": "mittnavnermike",
   "license": "MIT",
-  "repository": "mittnavnermike/hey-ui",
+  "repository": "heydaysoslo/hey-ui",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
