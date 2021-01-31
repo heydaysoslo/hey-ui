@@ -2,32 +2,32 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { applyModifier } from '../../../styles/utils/helpers'
 
-type Modifiers = 'small'
+type Modifiers = 'small' | 'full'
 
-type Props = {
-  children: React.ReactNode
-  className?: string
+export type Props = {
+  children: React.ReactNode | React.ReactText
   modifiers?: Modifiers | Modifiers[] | undefined
+  disabled?: boolean
 }
 
 const Button: React.FC<Props & React.HTMLAttributes<HTMLButtonElement>> = ({
   children,
-  className,
+  disabled,
   ...props
 }) => {
   return (
-    <button
-      className={className}
+    <Wrapper
+      disabled={disabled}
       onMouseDown={(e) => e.preventDefault()}
       {...props}
     >
       {children}
-    </button>
+    </Wrapper>
   )
 }
 
-export default styled(Button)(
-  ({ theme: t }) => css`
+const Wrapper = styled.button<Props>(
+  ({ theme: t, modifiers }) => css`
     appearance: none;
     background: none;
     display: inline-block;
@@ -38,25 +38,34 @@ export default styled(Button)(
     padding: 20px;
     transition: 0.15s ease background-color, color;
     cursor: pointer;
-    ${t.fonts.h1()};
-    ${t.spacing.section('mt')}
-
-    [disabled] {
-      opacity: 0.5;
-      pointer-events: none;
-    }
+    ${modifiers && !modifiers.includes('small') && t.fonts.body()};
+    border-radius: ${t.radius?.normal || '0px'};
 
     &:hover {
       background-color: ${t.colors.background};
       color: ${t.colors.text};
-      border-color: ${t.colors.primary};
+    }
+
+    &[disabled],
+    &[aria-disabled] {
+      opacity: 0.5;
+      pointer-events: none;
     }
 
     ${applyModifier(
       'small',
       css`
         padding: 0;
+        ${t.fonts.small()};
+      `
+    )}
+    ${applyModifier(
+      'full',
+      css`
+        width: 100%;
       `
     )}
   `
 )
+
+export default Button

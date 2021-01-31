@@ -1,5 +1,5 @@
 import React from 'react';
-declare type Props = {
+export declare type Props = {
     /**
      * Name of emoji.
      */

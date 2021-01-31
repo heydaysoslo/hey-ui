@@ -1,12 +1,11 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-type Props = {
+export type Props = {
   /**
    * State: Open or closed
    */
   active: boolean
-  className?: string
   /**
    * Thickness of individual stroke in px
    * @note default 2
@@ -30,13 +29,13 @@ type Props = {
   easeOut?: string
 }
 
-const Burger: React.FC<Props> = ({ className }) => {
+const Burger: React.FC<Props> = (props) => {
   return (
-    <div className={className}>
+    <StyledBurger {...props}>
       <span className='box'>
         <span className='inner' />
       </span>
-    </div>
+    </StyledBurger>
   )
 }
 
@@ -44,7 +43,7 @@ const Burger: React.FC<Props> = ({ className }) => {
 Styling and transition logic based on "Squeeze" from https://jonsuh.com/hamburgers/
 */
 
-export default styled(Burger)(
+const StyledBurger = styled.span<Props>(
   ({
     theme,
     active,
@@ -58,8 +57,8 @@ export default styled(Burger)(
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: ${width}px;
+    height: ${height}px;
 
     // Lines container
     .box {
@@ -120,3 +119,5 @@ export default styled(Burger)(
     `}
   `
 )
+
+export default Burger

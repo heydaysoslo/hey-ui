@@ -16,14 +16,14 @@ import { transitions } from '../../../utilities/animation';
  * 📚Package: https://www.npmjs.com/package/react-intersection-observer
  * 🎥 With react-spring:  https://github.com/thebuilder/react-intersection-observer/blob/HEAD/docs/Recipes.md#trigger-animations
  */
-declare type Props = {
+export declare type Props = {
     /**
      * The amount of the element to be visible before triggering animation.
      * Number between 0 - 1.
      */
     threshold?: number;
     /**
-     * Handler when element get into or out of view (threshold).
+     * Handler when element gets into or out of view (threshold).
      */
     onInView?: (args: {
         inView?: boolean;

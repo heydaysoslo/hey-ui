@@ -7,7 +7,7 @@ import { transitions as transitionsType } from '../../../types'
 
 const ID = nanoid(10)
 
-type Props = {
+export type Props = {
   /**
    * Name of transition
    */

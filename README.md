@@ -1,27 +1,46 @@
 # hey-ui
 
-> Heydays component library
+[![NPM](https://img.shields.io/npm/v/heydays-ui.svg?style=flat&logo=npm)](https://www.npmjs.com/package/heydays-ui)
+[![Bundle size](https://img.shields.io/bundlephobia/min/heydays-ui?style=flat&logo=bundlephobia)](https://github.com/heydaysoslo/hey-ui)
+[![Checks](https://img.shields.io/github/checks-status/heydaysoslo/hey-ui/master?style=flat&logo=Jest)](https://github.com/heydaysoslo/hey-ui)
+[![Popular language](https://img.shields.io/github/languages/top/heydaysoslo/hey-ui?style=flat&logo=github)](https://github.com/heydaysoslo/hey-ui)
 
-[![NPM](https://img.shields.io/npm/v/hey-ui.svg)](https://www.npmjs.com/package/hey-ui) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+Component library built with React and Styled components mainly for use for [Heydays](https://heydays.no).
 
 ## Install
 
 ```bash
-npm install --save hey-ui
+yarn add heydays-ui
+```
+
+or with npm
+
+```bash
+npm i heydays-ui
+```
+
+## Development
+
+You need to start the bundler for the package, and start the example app.
+
+```bash
+yarn start
+cd example && yarn start
 ```
 
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'hey-ui'
-import 'hey-ui/dist/index.css'
+import { Button } from 'hey-ui'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const MyComp = () => {
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  )
 }
 ```
 

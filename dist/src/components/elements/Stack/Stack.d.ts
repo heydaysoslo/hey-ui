@@ -1,5 +1,5 @@
 import React from 'react';
-import { SpacerProps } from '../Spacer/Spacer';
+import { Props as SpacerProps } from '../Spacer/Spacer';
 declare type Props = {
     className?: string;
     /**

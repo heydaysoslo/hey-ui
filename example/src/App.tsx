@@ -12,7 +12,7 @@ const App = () => {
       <Stack space='sm'>
         <Sticky top='0'>
           <button onClick={() => setIsOpen(!isOpen)}>
-            <Burger active={isOpen} />
+            <Burger active={isOpen} thickness={3} />
           </button>
           <Switch state={isOn} onClick={() => setIsOn(!isOn)} />
           <p>

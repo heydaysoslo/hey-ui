@@ -1,10 +1,9 @@
 import React from 'react';
-declare type Props = {
+export declare type Props = {
     /**
      * State: Open or closed
      */
     active: boolean;
-    className?: string;
     /**
      * Thickness of individual stroke in px
      * @note default 2
@@ -27,5 +26,5 @@ declare type Props = {
      */
     easeOut?: string;
 };
-declare const _default: import("styled-components").StyledComponent<React.FC<Props>, any, {}, never>;
-export default _default;
+declare const Burger: React.FC<Props>;
+export default Burger;

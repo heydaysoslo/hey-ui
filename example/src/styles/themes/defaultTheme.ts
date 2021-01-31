@@ -85,7 +85,7 @@ export const fontFamily = {
 }
 
 const fontDefs = {
-  xs: '16px/1.2'
+  xs: '12px/1.2'
 }
 
 export const responsiveFonts = {
@@ -149,6 +149,11 @@ export const borderWidth = {
   large: remSize(3)
 }
 
+export const radius = {
+  small: remSize(3),
+  normal: remSize(10)
+}
+
 /**
  * Usage:
  * {
@@ -195,7 +200,8 @@ const theme: DefaultTheme = {
   trans,
   icons,
   borderWidth,
-  border
+  border,
+  radius
 }
 
 export default theme

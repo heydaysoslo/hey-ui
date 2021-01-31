@@ -1,20 +1,20 @@
-import React from 'react'
 import styled, { css } from 'styled-components'
 import { SpacingSizes } from '../../../../example/src/styles/utilities/spacingFactory'
 
-export type SpacerProps = {
-  className?: string
+export type Props = {
   size?: SpacingSizes
   custom?: string
 }
 
-const Spacer: React.FC<SpacerProps> = ({ className }) => {
-  return <div className={className} />
-}
-
-export default styled(Spacer)(
+const Spacer = styled.div<Props>(
   ({ theme, size = 'md', custom }) => css`
-    ${!custom && theme.spacing[size]('height')};
-    ${custom && `height: ${custom}`};
+    ${!custom && theme.spacing[size]('size')};
+    ${custom &&
+    css`
+      height: ${custom};
+      width: ${custom};
+    `};
   `
 )
+
+export default Spacer

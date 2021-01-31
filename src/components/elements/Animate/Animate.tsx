@@ -1,12 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { transitions } from '../../../utilities/animation'
+import type { transitions as transitionType } from '../../../types'
 
-type Props = {
+export type Props = {
   /**
    * Name of transition
    */
-  type?: keyof typeof transitions
+  type?: transitionType
   className?: string
 }
 

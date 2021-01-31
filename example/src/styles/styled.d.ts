@@ -1,10 +1,3 @@
-// import {} from 'styled-components'
-// import theme from '../themes/DefaultTheme'
-// declare module 'styled-components' {
-//   type Theme = typeof theme
-//   export interface DefaultTheme extends Theme {}
-// }
-
 // import original module declarations
 import 'styled-components'
 // https://styled-components.com/docs/api#usage-with-typescript
@@ -60,9 +53,14 @@ declare module 'styled-components' {
     icons: typeof icons
     trans: typeof trans
     borderWidth: typeof borderWidth
-    border: {
+    border?: {
       small?: () => ({ theme: DefaultTheme }) => string
       large?: () => ({ theme: DefaultTheme }) => string
+    }
+    radius?: {
+      small?: string
+      normal: string
+      large?: string
     }
     defaultStyle?: ({ theme }: { theme: DefaultTheme | undefined }) => void
   }

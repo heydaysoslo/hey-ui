@@ -3,17 +3,19 @@ import styled, { css } from 'styled-components'
 import { motion } from 'framer-motion'
 import Emoji from '../Emoji/Emoji'
 
-type Props = {
+export type Props = {
   state: boolean
   size?: number
-  className?: string
-  onClick: () => void
 }
 
-const Switch: React.FC<Props> = ({ className, onClick, state, size = 150 }) => {
+const Switch: React.FC<Props & React.HTMLAttributes<HTMLButtonElement>> = ({
+  onClick,
+  state,
+  size = 150
+}) => {
   return (
-    <button
-      className={className}
+    <StyledSwitch
+      size={size}
       onClick={onClick}
       onMouseDown={(e) => e.preventDefault()}
     >
@@ -32,11 +34,13 @@ const Switch: React.FC<Props> = ({ className, onClick, state, size = 150 }) => {
           <Emoji label='moon emoji'>{state ? '🌚' : '🌝'}</Emoji>
         </motion.div>
       </motion.div>
-    </button>
+    </StyledSwitch>
   )
 }
 
-export default styled(Switch)(
+const StyledSwitch = styled.button<
+  { size: number } & React.HTMLAttributes<HTMLButtonElement>
+>(
   ({ size = 150 }) => css`
     font-size: ${size / 2.2}px;
     line-height: 1.1;
@@ -67,3 +71,5 @@ export default styled(Switch)(
     }
   `
 )
+
+export default Switch

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
-import Spacer, { SpacerProps } from '../Spacer/Spacer'
+import Spacer, { Props as SpacerProps } from '../Spacer/Spacer'
 
 type Props = {
   className?: string

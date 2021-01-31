@@ -1,9 +1,7 @@
-import React from 'react';
 import { SpacingSizes } from '../../../../example/src/styles/utilities/spacingFactory';
-export declare type SpacerProps = {
-    className?: string;
+export declare type Props = {
     size?: SpacingSizes;
     custom?: string;
 };
-declare const _default: import("styled-components").StyledComponent<React.FC<SpacerProps>, any, {}, never>;
-export default _default;
+declare const Spacer: import("styled-components").StyledComponent<"div", any, Props, never>;
+export default Spacer;

@@ -8,8 +8,10 @@ export const easings = {
   default: { duration: 1, ease: [0.4, 0.0, 0.2, 1] }
 }
 
+type transitions = 'stagger' | 'fadeInUp' | 'fadeIn'
+
 export const transitions: {
-  [key: string]: {
+  [key in transitions]: {
     initial: any
     animate: any
     exit?: any

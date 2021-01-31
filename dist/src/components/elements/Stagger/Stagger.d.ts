@@ -1,6 +1,6 @@
 import React from 'react';
 import { transitions as transitionsType } from '../../../types';
-declare type Props = {
+export declare type Props = {
     /**
      * Name of transition
      */

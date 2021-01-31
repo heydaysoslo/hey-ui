@@ -1,9 +1,4 @@
-import {
-  createGlobalStyle,
-  css,
-  DefaultTheme,
-  ThemedCssFunction
-} from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 import { globalTypeStyle } from './Typography'
 
 export const GlobalStyle = createGlobalStyle(

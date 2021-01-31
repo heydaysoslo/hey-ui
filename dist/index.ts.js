@@ -141,7 +141,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteralLoose(["\n    // Make sure click-rect is big enough for usability\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    width: 48px;\n    height: 48px;\n\n    // Lines container\n    .box {\n      position: relative;\n      display: block;\n      width: ", "px;\n      height: ", "px;\n    }\n\n    // Lines\n    .inner,\n    .inner:after,\n    .inner:before {\n      position: absolute;\n      width: 100%;\n      height: ", "px;\n      background-color: ", ";\n    }\n\n    .inner {\n      transition-timing-function: ", ";\n      transition-duration: 75ms;\n      top: 50%;\n      display: block;\n      margin-top: -", "px;\n      :before,\n      :after {\n        display: block;\n        content: '';\n      }\n      :before {\n        transition: top 75ms ease 0.12s, opacity 75ms ease;\n        top: -", "px;\n      }\n      :after {\n        transition: bottom 75ms ease 0.12s, transform 75ms ", ";\n        bottom: -", "px;\n      }\n    }\n\n    ", "\n  "]);
+  var data = _taggedTemplateLiteralLoose(["\n    // Make sure click-rect is big enough for usability\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    width: ", "px;\n    height: ", "px;\n\n    // Lines container\n    .box {\n      position: relative;\n      display: block;\n      width: ", "px;\n      height: ", "px;\n    }\n\n    // Lines\n    .inner,\n    .inner:after,\n    .inner:before {\n      position: absolute;\n      width: 100%;\n      height: ", "px;\n      background-color: ", ";\n    }\n\n    .inner {\n      transition-timing-function: ", ";\n      transition-duration: 75ms;\n      top: 50%;\n      display: block;\n      margin-top: -", "px;\n      :before,\n      :after {\n        display: block;\n        content: '';\n      }\n      :before {\n        transition: top 75ms ease 0.12s, opacity 75ms ease;\n        top: -", "px;\n      }\n      :after {\n        transition: bottom 75ms ease 0.12s, transform 75ms ", ";\n        bottom: -", "px;\n      }\n    }\n\n    ", "\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -150,31 +150,28 @@ function _templateObject() {
   return data;
 }
 
-var Burger = function Burger(_ref) {
-  var className = _ref.className;
-  return React__default.createElement("div", {
-    className: className
-  }, React__default.createElement("span", {
+var Burger = function Burger(props) {
+  return React__default.createElement(StyledBurger, Object.assign({}, props), React__default.createElement("span", {
     className: 'box'
   }, React__default.createElement("span", {
     className: 'inner'
   })));
 };
 
-var Burger$1 = styled__default(Burger)(function (_ref2) {
-  var theme = _ref2.theme,
-      active = _ref2.active,
-      _ref2$thickness = _ref2.thickness,
-      thickness = _ref2$thickness === void 0 ? 2 : _ref2$thickness,
-      _ref2$width = _ref2.width,
-      width = _ref2$width === void 0 ? 32 : _ref2$width,
-      _ref2$height = _ref2.height,
-      height = _ref2$height === void 0 ? 24 : _ref2$height,
-      _ref2$easeIn = _ref2.easeIn,
-      easeIn = _ref2$easeIn === void 0 ? 'cubic-bezier(.55,.055,.675,.19)' : _ref2$easeIn,
-      _ref2$easeOut = _ref2.easeOut,
-      easeOut = _ref2$easeOut === void 0 ? 'cubic-bezier(0.215, 0.61, 0.355, 1)' : _ref2$easeOut;
-  return styled.css(_templateObject(), width, height, thickness, theme.colors.text, easeIn, thickness / 2, height / 2 - thickness / 2, easeIn, height / 2 - thickness / 2, active && styled.css(_templateObject2(), easeOut, easeOut));
+var StyledBurger = styled__default.span(function (_ref) {
+  var theme = _ref.theme,
+      active = _ref.active,
+      _ref$thickness = _ref.thickness,
+      thickness = _ref$thickness === void 0 ? 2 : _ref$thickness,
+      _ref$width = _ref.width,
+      width = _ref$width === void 0 ? 32 : _ref$width,
+      _ref$height = _ref.height,
+      height = _ref$height === void 0 ? 24 : _ref$height,
+      _ref$easeIn = _ref.easeIn,
+      easeIn = _ref$easeIn === void 0 ? 'cubic-bezier(.55,.055,.675,.19)' : _ref$easeIn,
+      _ref$easeOut = _ref.easeOut,
+      easeOut = _ref$easeOut === void 0 ? 'cubic-bezier(0.215, 0.61, 0.355, 1)' : _ref$easeOut;
+  return styled.css(_templateObject(), width, height, width, height, thickness, theme.colors.text, easeIn, thickness / 2, height / 2 - thickness / 2, easeIn, height / 2 - thickness / 2, active && styled.css(_templateObject2(), easeOut, easeOut));
 });
 
 var applyModifier = function applyModifier(modifier, css) {
@@ -185,8 +182,18 @@ var applyModifier = function applyModifier(modifier, css) {
   };
 };
 
+function _templateObject3() {
+  var data = _taggedTemplateLiteralLoose(["\n        width: 100%;\n      "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2$1() {
-  var data = _taggedTemplateLiteralLoose(["\n        padding: 0;\n      "]);
+  var data = _taggedTemplateLiteralLoose(["\n        padding: 0;\n        ", ";\n      "]);
 
   _templateObject2$1 = function _templateObject2() {
     return data;
@@ -196,7 +203,7 @@ function _templateObject2$1() {
 }
 
 function _templateObject$1() {
-  var data = _taggedTemplateLiteralLoose(["\n    appearance: none;\n    background: none;\n    display: inline-block;\n    border: 2px solid transparent;\n    background-color: ", ";\n    color: ", ";\n    font-size: 2rem;\n    padding: 20px;\n    transition: 0.15s ease background-color, color;\n    cursor: pointer;\n    ", ";\n    ", "\n\n    [disabled] {\n      opacity: 0.5;\n      pointer-events: none;\n    }\n\n    &:hover {\n      background-color: ", ";\n      color: ", ";\n      border-color: ", ";\n    }\n\n    ", "\n  "]);
+  var data = _taggedTemplateLiteralLoose(["\n    appearance: none;\n    background: none;\n    display: inline-block;\n    border: 2px solid transparent;\n    background-color: ", ";\n    color: ", ";\n    font-size: 2rem;\n    padding: 20px;\n    transition: 0.15s ease background-color, color;\n    cursor: pointer;\n    ", ";\n    border-radius: ", ";\n\n    &:hover {\n      background-color: ", ";\n      color: ", ";\n    }\n\n    &[disabled],\n    &[aria-disabled] {\n      opacity: 0.5;\n      pointer-events: none;\n    }\n\n    ", "\n    ", "\n  "]);
 
   _templateObject$1 = function _templateObject() {
     return data;
@@ -207,20 +214,23 @@ function _templateObject$1() {
 
 var Button = function Button(_ref) {
   var children = _ref.children,
-      className = _ref.className,
-      props = _objectWithoutPropertiesLoose(_ref, ["children", "className"]);
+      disabled = _ref.disabled,
+      props = _objectWithoutPropertiesLoose(_ref, ["children", "disabled"]);
 
-  return React__default.createElement("button", Object.assign({
-    className: className,
+  return React__default.createElement(Wrapper, Object.assign({
+    disabled: disabled,
     onMouseDown: function onMouseDown(e) {
       return e.preventDefault();
     }
   }, props), children);
 };
 
-var Button$1 = styled__default(Button)(function (_ref2) {
-  var t = _ref2.theme;
-  return styled.css(_templateObject$1(), t.colors.text, t.colors.background, t.fonts.h1(), t.spacing.section('mt'), t.colors.background, t.colors.text, t.colors.primary, applyModifier('small', styled.css(_templateObject2$1())));
+var Wrapper = styled__default.button(function (_ref2) {
+  var _t$radius;
+
+  var t = _ref2.theme,
+      modifiers = _ref2.modifiers;
+  return styled.css(_templateObject$1(), t.colors.text, t.colors.background, modifiers && !modifiers.includes('small') && t.fonts.body(), ((_t$radius = t.radius) === null || _t$radius === void 0 ? void 0 : _t$radius.normal) || '0px', t.colors.background, t.colors.text, applyModifier('small', styled.css(_templateObject2$1(), t.fonts.small())), applyModifier('full', styled.css(_templateObject3())));
 });
 
 function _templateObject$2() {
@@ -255,6 +265,16 @@ var Emoji = function Emoji(_ref) {
   }, children);
 };
 
+function _templateObject2$2() {
+  var data = _taggedTemplateLiteralLoose(["\n      height: ", ";\n      width: ", ";\n    "]);
+
+  _templateObject2$2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject$3() {
   var data = _taggedTemplateLiteralLoose(["\n    ", ";\n    ", ";\n  "]);
 
@@ -264,36 +284,28 @@ function _templateObject$3() {
 
   return data;
 }
-
-var Spacer = function Spacer(_ref) {
-  var className = _ref.className;
-  return React__default.createElement("div", {
-    className: className
-  });
-};
-
-var Spacer$1 = styled__default(Spacer)(function (_ref2) {
-  var theme = _ref2.theme,
-      _ref2$size = _ref2.size,
-      size = _ref2$size === void 0 ? 'md' : _ref2$size,
-      custom = _ref2.custom;
-  return styled.css(_templateObject$3(), !custom && theme.spacing[size]('height'), custom && "height: " + custom);
+var Spacer = styled__default.div(function (_ref) {
+  var theme = _ref.theme,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 'md' : _ref$size,
+      custom = _ref.custom;
+  return styled.css(_templateObject$3(), !custom && theme.spacing[size]('size'), custom && styled.css(_templateObject2$2(), custom, custom));
 });
 
-function _templateObject3() {
+function _templateObject3$1() {
   var data = _taggedTemplateLiteralLoose(["\n          flex-direction: ", ";\n        "]);
 
-  _templateObject3 = function _templateObject3() {
+  _templateObject3$1 = function _templateObject3() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject2$2() {
+function _templateObject2$3() {
   var data = _taggedTemplateLiteralLoose(["\n          flex-direction: ", "-reverse;\n        "]);
 
-  _templateObject2$2 = function _templateObject2() {
+  _templateObject2$3 = function _templateObject2() {
     return data;
   };
 
@@ -322,19 +334,19 @@ var Stack = function Stack(_ref) {
 
   return React__default.createElement("div", Object.assign({
     className: className
-  }, props), spaceEnds && React__default.createElement(Spacer$1, {
+  }, props), spaceEnds && React__default.createElement(Spacer, {
     size: typeof spaceEnds === 'string' ? spaceEnds : space
-  }), spaceEndsStart && React__default.createElement(Spacer$1, {
+  }), spaceEndsStart && React__default.createElement(Spacer, {
     size: typeof spaceEndsStart === 'string' ? spaceEndsStart : space
   }), Array.isArray(children) ? children.map(function (child, i) {
     return React__default.createElement(React.Fragment, {
       key: "stack-" + i
-    }, child, i !== children.length - 1 && React__default.createElement(Spacer$1, {
+    }, child, i !== children.length - 1 && React__default.createElement(Spacer, {
       size: space
     }));
-  }) : children, spaceEndsEnd && React__default.createElement(Spacer$1, {
+  }) : children, spaceEndsEnd && React__default.createElement(Spacer, {
     size: typeof spaceEndsEnd === 'string' ? spaceEndsEnd : space
-  }), spaceEnds && React__default.createElement(Spacer$1, {
+  }), spaceEnds && React__default.createElement(Spacer, {
     size: typeof spaceEnds === 'string' ? spaceEnds : space
   }));
 };
@@ -343,7 +355,7 @@ var Stack$1 = styled__default(Stack)(function (_ref2) {
   var reverse = _ref2.reverse,
       _ref2$direction = _ref2.direction,
       direction = _ref2$direction === void 0 ? 'column' : _ref2$direction;
-  return styled.css(_templateObject$4(), direction, reverse ? styled.css(_templateObject2$2(), direction) : styled.css(_templateObject3(), direction));
+  return styled.css(_templateObject$4(), direction, reverse ? styled.css(_templateObject2$3(), direction) : styled.css(_templateObject3$1(), direction));
 });
 
 var ID = nanoid.nanoid(10);
@@ -372,20 +384,20 @@ var Stagger = function Stagger(_ref) {
   }));
 };
 
-function _templateObject3$1() {
+function _templateObject3$2() {
   var data = _taggedTemplateLiteralLoose(["\n          top: 0;\n        "]);
 
-  _templateObject3$1 = function _templateObject3() {
+  _templateObject3$2 = function _templateObject3() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject2$3() {
+function _templateObject2$4() {
   var data = _taggedTemplateLiteralLoose(["\n          top: ", ";\n        "]);
 
-  _templateObject2$3 = function _templateObject2() {
+  _templateObject2$4 = function _templateObject2() {
     return data;
   };
 
@@ -401,21 +413,13 @@ function _templateObject$5() {
 
   return data;
 }
-
-var Sticky = function Sticky(_ref) {
-  var className = _ref.className,
-      children = _ref.children;
-  return React__default.createElement("div", {
-    className: className
-  }, children);
-};
-
-var Sticky$1 = styled__default(Sticky)(function (_ref2) {
-  var theme = _ref2.theme,
-      top = _ref2.top,
-      _ref2$from = _ref2.from,
-      from = _ref2$from === void 0 ? 'xs' : _ref2$from;
-  return styled.css(_templateObject$5(), theme.bp[from], top ? styled.css(_templateObject2$3(), top) : styled.css(_templateObject3$1()));
+var Sticky = styled__default.div(function (_ref) {
+  var theme = _ref.theme,
+      _ref$top = _ref.top,
+      top = _ref$top === void 0 ? '0px' : _ref$top,
+      _ref$from = _ref.from,
+      from = _ref$from === void 0 ? 'xs' : _ref$from;
+  return styled.css(_templateObject$5(), theme.bp[from], top ? styled.css(_templateObject2$4(), top) : styled.css(_templateObject3$2()));
 });
 
 function _templateObject$6() {
@@ -429,13 +433,12 @@ function _templateObject$6() {
 }
 
 var Switch = function Switch(_ref) {
-  var className = _ref.className,
-      onClick = _ref.onClick,
+  var onClick = _ref.onClick,
       state = _ref.state,
       _ref$size = _ref.size,
       size = _ref$size === void 0 ? 150 : _ref$size;
-  return React__default.createElement("button", {
-    className: className,
+  return React__default.createElement(StyledSwitch, {
+    size: size,
     onClick: onClick,
     onMouseDown: function onMouseDown(e) {
       return e.preventDefault();
@@ -465,7 +468,7 @@ var Switch = function Switch(_ref) {
   }, state ? '🌚' : '🌝'))));
 };
 
-var Switch$1 = styled__default(Switch)(function (_ref2) {
+var StyledSwitch = styled__default.button(function (_ref2) {
   var _ref2$size = _ref2.size,
       size = _ref2$size === void 0 ? 150 : _ref2$size;
   return styled.css(_templateObject$6(), size / 2.2, size, size / 2.2, size / 4, size / 2.2, size / 2.2, size / 2.2, size * 2);
@@ -473,13 +476,13 @@ var Switch$1 = styled__default(Switch)(function (_ref2) {
 
 exports.Animate = Animate;
 exports.AnimateInView = AnimateInView;
-exports.Burger = Burger$1;
-exports.Button = Button$1;
+exports.Burger = Burger;
+exports.Button = Button;
 exports.Container = Container$1;
 exports.Emoji = Emoji;
-exports.Spacer = Spacer$1;
+exports.Spacer = Spacer;
 exports.Stack = Stack$1;
 exports.Stagger = Stagger;
-exports.Sticky = Sticky$1;
-exports.Switch = Switch$1;
+exports.Sticky = Sticky;
+exports.Switch = Switch;
 //# sourceMappingURL=index.ts.js.map

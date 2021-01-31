@@ -1,10 +1,10 @@
 import React from 'react';
-import { transitions } from '../../../utilities/animation';
-declare type Props = {
+import type { transitions as transitionType } from '../../../types';
+export declare type Props = {
     /**
      * Name of transition
      */
-    type?: keyof typeof transitions;
+    type?: transitionType;
     className?: string;
 };
 declare const Animate: React.FC<Props>;

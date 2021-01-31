@@ -4,10 +4,12 @@ export declare const easings: {
         ease: number[];
     };
 };
+declare type transitions = 'stagger' | 'fadeInUp' | 'fadeIn';
 export declare const transitions: {
-    [key: string]: {
+    [key in transitions]: {
         initial: any;
         animate: any;
         exit?: any;
     };
 };
+export {};

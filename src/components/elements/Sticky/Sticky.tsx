@@ -1,27 +1,21 @@
-import React from 'react'
 import styled, { css } from 'styled-components'
 import { BreakpointKeys } from '../../../../example/src/styles/utilities/breakpointsFactory'
 
-type Sticky = {
-  className?: string
+export type Props = {
   /**
    * css value determines when to stick from top.
    *
    * @example var(--header-height) | 20px | 50rem
    */
-  top: string
+  top?: string
   /**
    * @note defaults to xs
    */
   from?: BreakpointKeys
 }
 
-const Sticky: React.FC<Sticky> = ({ className, children }) => {
-  return <div className={className}>{children}</div>
-}
-
-export default styled(Sticky)(
-  ({ theme, top, from = 'xs' }) => css`
+const Sticky = styled.div<Props>(
+  ({ theme, top = '0px', from = 'xs' }) => css`
     ${theme.bp[from]} {
       position: sticky;
     }
@@ -34,3 +28,5 @@ export default styled(Sticky)(
         `}
   `
 )
+
+export default Sticky
