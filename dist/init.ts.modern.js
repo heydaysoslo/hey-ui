@@ -1,17 +1,20 @@
-class Theme {
-  constructor(theme) {
+var Theme = /*#__PURE__*/function () {
+  function Theme(theme) {
     this.theme = theme;
   }
 
-  getTheme() {
+  var _proto = Theme.prototype;
+
+  _proto.getTheme = function getTheme() {
     return this.theme;
-  }
+  };
 
-  setTheme(theme) {
+  _proto.setTheme = function setTheme(theme) {
     this.theme = theme;
-  }
+  };
 
-}
+  return Theme;
+}();
 
 var init = new Theme({});
 

@@ -1,4 +1,8 @@
 import React from 'react';
-declare const _default: any;
+import { Props } from './Burger';
+declare const _default: {
+    title: string;
+    component: React.FC<Props>;
+};
 export default _default;
-export declare const Main: React.VFC<{}>;
+export declare const Main: React.VFC<Props>;
