@@ -12,7 +12,6 @@ import {} from 'styled-components/cssprop'
 import { FlattenSimpleInterpolation } from 'styled-components'
 import {
   SpacingFuncs,
-  spacingFuncs,
   SpacingFuncsWithFunc,
   SpacingSizes
 } from './utilities/spacingFactory'
@@ -70,5 +69,5 @@ declare module 'styled-components' {
   export function createGlobalStyle(
     strings: TemplateStringsArray,
     ...interpolations: SimpleInterpolation[]
-  ): React.ComponentClass;
+  ): React.ComponentClass
 }

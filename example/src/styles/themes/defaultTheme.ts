@@ -13,7 +13,7 @@ export const colors = {
   secondary: 'green',
   text: 'black',
   border: 'black',
-  background: 'green'
+  background: 'orange'
 }
 
 export const breakpoints = {

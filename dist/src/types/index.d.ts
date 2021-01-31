@@ -1,0 +1,34 @@
+import { transitions } from '../utilities/animation';
+export declare type themeAspect = 'portrait' | 'landscape' | 'widescreen' | 'panorama';
+export declare type BreakpointKeys = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+export declare type FlexBoxAlignItems = 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+export declare type FlexBoxJustifyContent = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around';
+export declare type BorderProps = 'border' | 'border-top' | 'border-right' | 'border-bottom' | 'border-left';
+export declare type NormalizedNumber = 0 | 0.05 | 0.1 | 0.15 | 0.2 | 0.25 | 0.3 | 0.35 | 0.4 | 0.45 | 0.5 | 0.55 | 0.6 | 0.65 | 0.7 | 0.75 | 0.8 | 0.85 | 0.9 | 0.95 | 1;
+export declare type Cloudinary = {
+    aspectRatio: number;
+    public_id: string;
+    format: string;
+    type: string;
+    bytes?: number;
+    created_at?: string;
+    duration?: number;
+    height?: number;
+    width?: number;
+    metadata?: string[];
+    resource_type?: string;
+    secure_url?: string;
+    tags?: string[];
+    url?: string;
+    version?: string;
+    aspect_ratio?: number;
+    alt?: string;
+};
+declare type nest = 'image' | 'cldImage';
+export declare type CloudinaryNode = Cloudinary & {
+    [key in nest]?: Cloudinary;
+};
+export declare type aspectItem = themeAspect | number;
+export declare type aspect = Partial<Record<BreakpointKeys, aspectItem>> | aspectItem;
+export declare type transitions = keyof typeof transitions;
+export {};

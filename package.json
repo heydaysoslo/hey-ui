@@ -5,18 +5,24 @@
   "author": "mittnavnermike",
   "license": "MIT",
   "repository": "heydaysoslo/hey-ui",
-  "main": "dist/index.js",
+  "main": "dist/index.ts.js",
   "module": "dist/index.modern.js",
-  "source": "src/index.tsx",
+  "source": "src/index.ts",
   "engines": {
     "node": ">=10"
   },
+  "exports": {
+    ".": "./dist/index.ts.js",
+    "./init": "./dist/init.ts.js"
+  },
+  "types": "./dist/src",
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "build": "microbundle-crl src/*.ts --no-compress --format modern,cjs",
+    "start": "microbundle-crl watch src/*.ts --no-compress --ts-config tsconfig.custom.json  --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
+    "lint-staged": "lint-staged",
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
@@ -25,10 +31,12 @@
   },
   "peerDependencies": {
     "@types/styled-components": "^5.1.7",
+    "framer-motion": "^3.2.2-rc.1",
     "react": "^16.0.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.12.12",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -36,6 +44,7 @@
     "@types/node": "^12.12.38",
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.7",
+    "@types/styled-components": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.0.3",
@@ -50,16 +59,30 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
+    "framer-motion": "^3.2.2-rc.1",
     "gh-pages": "^2.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
+    "styled-components": "^5.2.1",
     "typescript": "^3.7.5"
   },
   "files": [
-    "dist"
-  ]
+    "dist",
+    "src/init"
+  ],
+  "dependencies": {
+    "nanoid": "^3.1.20",
+    "react-intersection-observer": "^8.31.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
+  }
 }
